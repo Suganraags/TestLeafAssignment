@@ -12,6 +12,8 @@ public class Assignment1 {
 		ChromeDriver driver = new ChromeDriver();
 		//Launch URL:
 		driver.navigate().to("https://acme-test.uipath.com/account/login");
+		//Implicit wait
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		// Enter UserName (kumar.testleaf@gmail.com)
 		driver.findElementById("email").sendKeys("kumar.testleaf@gmail.com");
 		// and TAB
@@ -20,7 +22,7 @@ public class Assignment1 {
 		driver.findElementById("password").sendKeys("leaf@12");
 		//Click Login
 		driver.findElementById("buttonLogin").click();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		//Mouse over on Vendors
 		WebElement ele = driver.findElementByXPath("//button[text()[normalize-space()='Vendors']]");
 		Actions builder = new Actions(driver);
